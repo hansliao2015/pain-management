@@ -1,4 +1,4 @@
-import humanImage from "./assets/human.svg"
+import HumanBody from "./components/HumanBody"
 import Button from "./components/Button"
 
 export default function App() {
@@ -18,9 +18,7 @@ export default function App() {
           Welcome to the Pain Management System. This is the future of pain
           management. We are here to help you.
         </p>
-        <div className="flex flex-col m-10 justify-center items-center">
-          <img className="w-[50%]" src={humanImage} alt="human" />
-        </div>
+        <HumanBody />
         
         <Button onClick={() => console.log("Hello!")} label="Click me!" />
       </main>
