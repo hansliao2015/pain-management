@@ -15,8 +15,8 @@ type TPoint = [number, number]
 export const defaultPointSize = 20
 
 export const bodyPoints = [
-  [309, 42],
-  [268, 84]
+  [74, 22],
+  [17, 138]
 ] as TPoint[]
 
 
@@ -28,7 +28,7 @@ export default function HumanBody() {
       const { left, top } = containerRef.current!.getBoundingClientRect()
       console.log(clientX - left, clientY - top)
     }}>
-      <img className="w-[50%]" src={humanImage} alt="human" />
+      <img className="w-[300px]" src={humanImage} alt="human" />
       {bodyPoints.map(([x, y]) => (
         <div key={`${x} ${y}`} className="absolute" style={{
           left: x,
