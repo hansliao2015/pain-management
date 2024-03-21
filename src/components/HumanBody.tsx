@@ -2,6 +2,8 @@ import { useRef } from "react"
 
 import humanImage from "../assets/human.svg"
 
+import { Slider } from "@/components/ui/slider"
+
 import {
   Popover,
   PopoverContent,
@@ -42,7 +44,10 @@ export default function HumanBody() {
               }} />
             </PopoverTrigger>
             <PopoverContent>
-              <div>疼痛指數</div>
+              <div>
+                <p>疼痛指數</p>
+                <Slider defaultValue={[50]} max={100} step={20} />
+              </div>
             </PopoverContent>
           </Popover>
         </div>
