@@ -1,5 +1,4 @@
 import HumanBody from "../components/HumanBody"
-import Button from "../components/Button"
 
 export default function Main() {
   return (
@@ -9,8 +8,6 @@ export default function Main() {
         management. We are here to help you.
       </p>
       <HumanBody />
-      
-      <Button onClick={() => console.log("Hello!")} label="Click me!" />
     </main>
   )
 }

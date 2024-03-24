@@ -1,15 +1,13 @@
 import { useRef } from "react"
 
-import humanImage from "../assets/human.svg"
-
-import { Slider } from "@/components/ui/slider"
-
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
 
+import humanImage from "../assets/human.svg"
+import FaceImages from "./FaceImages"
 
 type TPoint = [number, number]
 
@@ -44,9 +42,10 @@ export default function HumanBody() {
               }} />
             </PopoverTrigger>
             <PopoverContent>
-              <div>
-                <p>疼痛指數</p>
-                <Slider defaultValue={[50]} max={100} step={20} />
+              <div className=" flex flex-col items-center ">
+                <p className="p-[5px] text-[30px]">疼痛指數</p>
+                <FaceImages />
+
               </div>
             </PopoverContent>
           </Popover>
