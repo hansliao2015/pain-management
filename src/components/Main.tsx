@@ -1,4 +1,4 @@
-import HumanBody from "../components/HumanBody"
+import HumanBody from "./HumanBody"
 
 export default function Main() {
   return (
