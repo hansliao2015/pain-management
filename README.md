@@ -5,3 +5,4 @@ Please git clone the url of this repository and do the following command
 
 - npm install
 - npm run dev
+- npx shadcn-ui@latest add popover
