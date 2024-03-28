@@ -11,13 +11,24 @@ import FaceImages from "./FaceImages"
 
 type TPoint = [number, number]
 
-
 export const defaultPointSize = 20
 
-export const bodyPoints = [
-  [74, 22],
-  [17, 138]
-] as TPoint[]
+export const bodyPoints = {
+  head: [150, 50] as TPoint,
+  neck: [150, 100] as TPoint,
+  leftShoulder: [100, 120] as TPoint,
+  rightShoulder: [200, 120] as TPoint,
+  leftElbow: [80, 150] as TPoint,
+  rightElbow: [220, 150] as TPoint,
+  leftWrist: [70, 180] as TPoint,
+  rightWrist: [230, 180] as TPoint,
+  leftHip: [120, 220] as TPoint,
+  rightHip: [180, 220] as TPoint,
+  leftKnee: [100, 300] as TPoint,
+  rightKnee: [200, 300] as TPoint,
+  leftAnkle: [90, 350] as TPoint,
+  rightAnkle: [210, 350] as TPoint,
+} as Record<string, TPoint>
 
 
 export default function HumanBody() {
@@ -29,8 +40,8 @@ export default function HumanBody() {
       console.log(clientX - left, clientY - top)
     }}>
       <img className="w-[300px]" src={humanImage} alt="human" />
-      {bodyPoints.map(([x, y]) => (
-        <div key={`${x} ${y}`} className="absolute" style={{
+      {Object.entries(bodyPoints).map(([key, [x, y]]) => (
+        <div key={key} className="absolute" style={{
           left: x,
           top: y
         }}>
@@ -43,7 +54,7 @@ export default function HumanBody() {
             </PopoverTrigger>
             <PopoverContent>
               <div className=" flex flex-col items-center ">
-                <p className="p-[5px] text-[30px]">疼痛指數</p>
+                <p className="p-[5px] text-[30px]">{key}的疼痛指數</p>
                 <FaceImages />
 
               </div>
